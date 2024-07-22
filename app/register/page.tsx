@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Footer from './../components/footer';
+import Footer from '../components/common/footer';
 import { useRouter } from 'next/navigation';
 
 export default function Register() {
@@ -21,6 +21,12 @@ export default function Register() {
 		const userData = { name, email, password };
 		localStorage.setItem('user', JSON.stringify(userData));
 		router.push('/login');
+	};
+
+	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		if (event.key === 'Enter') {
+			handleRegister();
+		}
 	};
 
 	return (
@@ -45,6 +51,7 @@ export default function Register() {
 							value={name}
 							onChange={(e) => setName(e.target.value)}
 							className="w-3/4 md:w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+							onKeyDown={handleKeyDown}
 						/>
 						<input
 							type="email"
@@ -52,6 +59,7 @@ export default function Register() {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							className="w-3/4 md:w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+							onKeyDown={handleKeyDown}
 						/>
 						<div className="relative w-3/4 md:w-full">
 							<input
@@ -60,6 +68,7 @@ export default function Register() {
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 								className="w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+								onKeyDown={handleKeyDown}
 							/>
 							<button
 								type="button"

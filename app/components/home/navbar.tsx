@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import MobileMenu from '../navbarMobile';
+import MobileMenu from '../common/navbarMobile';
 
 interface NavBarProps {
   showContent: boolean;

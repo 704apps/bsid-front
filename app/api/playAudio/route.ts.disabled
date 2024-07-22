@@ -1,0 +1,25 @@
+// import { NextRequest, NextResponse } from 'next/server';
+
+// export async function POST(req: NextRequest) {
+//   const corsHeaders = new Headers({
+//     'Access-Control-Allow-Origin': '*',
+//     'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+//     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+//     'Cache-Control': 'no-store',
+//   });
+
+//   try {
+//     const { id, title } = await req.json();
+
+//     if (!id || !title) {
+//       return new NextResponse('Bad Request: Missing id or title', { status: 400, headers: corsHeaders });
+//     }
+
+//     const audioUrl = `http://174.138.95.161:3000/signature/audio/${id}-${title.replace(/ /g, "-")}.wav`;
+
+//     return new NextResponse(JSON.stringify({ audioUrl }), { headers: corsHeaders });
+//   } catch (error) {
+//     console.error('Error generating audio URL:', error);
+//     return new NextResponse('Internal Server Error', { status: 500, headers: corsHeaders });
+//   }
+// }

@@ -1,6 +1,6 @@
 "use client";
 import { Github, Mail, Twitter } from "lucide-react";
-import { Navigation } from "../components/navbar";
+import { Navigation } from "../components/common/navbar";
 
 export default function About() {
   return (

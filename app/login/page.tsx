@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Footer from './../components/footer';
+import Footer from '../components/common/footer';
 import { useAuth } from '../context/authContext';
 import { useRouter } from 'next/navigation';
 
@@ -11,7 +11,7 @@ export default function Login() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const { login } = useAuth();
+	const { login, user } = useAuth();
 	const router = useRouter();
 
 	const togglePasswordVisibility = () => {
@@ -25,7 +25,7 @@ export default function Login() {
 				const userData = JSON.parse(storedUser);
 				if (userData.email === email && userData.password === password) {
 					login(email);
-					router.push('/dashboard');
+					router.push('/dashboard/createAudioSignature');
 				} else {
 					alert('Email ou senha incorretos');
 				}
@@ -37,6 +37,18 @@ export default function Login() {
 			alert('Usuário não encontrado');
 		}
 	};
+
+	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		if (event.key === 'Enter') {
+			handleLogin();
+		}
+	};
+
+	useEffect(() => {
+		if (user) {
+			router.push('/dashboard/createAudioSignature');
+		}
+	}, [user, router]);
 
 	return (
 		<div className="bg-gradient-to-tl from-white via-gray-100 to-white shadow-lg min-h-screen flex flex-col">
@@ -60,6 +72,7 @@ export default function Login() {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							className="w-3/4 md:w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+							onKeyDown={handleKeyDown}
 						/>
 						<div className="relative w-3/4 md:w-full">
 							<input
@@ -68,6 +81,7 @@ export default function Login() {
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 								className="w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+								onKeyDown={handleKeyDown}
 							/>
 							<button
 								type="button"

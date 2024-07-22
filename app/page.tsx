@@ -3,14 +3,14 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./components/home/navbar";
 import Header from "./components/home/header";
-import SoundWaves from "./components/soundWaves";
+import SoundWaves from "./components/common/soundWaves";
 import MainMessage from "./components/home/mainmessage";
 import Description from "./components/home/description";
 import CallToAction from "./components/home/calltoAction";
 import Carousel from "./components/home/carousel";
 
 const navigation = [
-  { name: "Crie seu BSID em 1 minuto", href: "/create" },
+  { name: "Crie seu BSID em 1 minuto", href: "/dashboard/createAudioSignature" },
   { name: "Quem somos", href: "/about" },
   { name: "Planos", href: "/plans" },
   { name: "Login", href: "/login" }

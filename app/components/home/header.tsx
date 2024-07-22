@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Particles from '../particles';
+import Particles from '../common/particles';
 
 interface HeaderProps {
   moveTitle: boolean;

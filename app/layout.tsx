@@ -1,4 +1,5 @@
 import "../global.css";
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
@@ -9,10 +10,10 @@ export const metadata: Metadata = {
     default: "BSID - Assinatura de áudio",
     template: "%s | BSID - Assinatura de áudio",
   },
-  description: "Escrever aqui",
+  description: "Faça barulho com sua assinatura de áudio inaudível",
   openGraph: {
     title: "BSID - Assinatura de áudio",
-    description: "escrever aqui",
+    description: "Faça barulho com sua assinatura de áudio inaudível",
     url: "https://bsid.com",
     siteName: "bsid.com",
     images: [

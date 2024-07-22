@@ -1,7 +1,7 @@
 <div align="center">
     <a href="https://bsid.loandre.com/"><h1 align="center">bsid.com.br</h1></a>
 
-BSID website, built with [Next.js](https://nextjs.org/), [tailwind CSS](https://tailwindcss.com/), [shadcn](https://ui.shadcn.com/) and deployed to [Vercel](https://vercel.com/).
+My personal website, built with [Next.js](https://nextjs.org/), [tailwind CSS](https://tailwindcss.com/), [shadcn](https://ui.shadcn.com/) and deployed to [Vercel](https://vercel.com/).
 
 </div>
 
@@ -22,7 +22,7 @@ cd bsid-base
 ```
 
 
-Create a `.env` file similar to [`.env.example`](https://github.com/chronark/chronark.com/blob/main/.env.example).
+Create a `.env.local` file similar to [`.env.example`](https://github.com/loandre).
 
 Then install dependencies and run the development server:
 ```sh-session

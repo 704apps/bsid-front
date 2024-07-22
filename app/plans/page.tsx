@@ -1,5 +1,5 @@
 "use client";
-import { Navigation } from "../components/navbar";
+import { Navigation } from "../components/common/navbar";
 
 export default function Plans() {
   return (
