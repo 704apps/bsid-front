@@ -5,7 +5,7 @@ interface HeaderProps {
   onLoad: () => void;
 }
 
-const CallToAction: React.FC<HeaderProps> = ({ moveTitle, onLoad }) => {
+export default function CallToAction ({ moveTitle, onLoad }: HeaderProps) {
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       onLoad();
@@ -33,5 +33,3 @@ const CallToAction: React.FC<HeaderProps> = ({ moveTitle, onLoad }) => {
     </div>
   );
 };
-
-export default  CallToAction
