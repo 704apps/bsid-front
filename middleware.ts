@@ -15,6 +15,7 @@ export async function middleware(request: NextRequest) {
       return redirectToLogin(request);
     }
   } catch (error) {
+    console.error(error)
     return redirectToLogin(request);
   }
 
@@ -28,5 +29,5 @@ function redirectToLogin(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/painel'],
+  matcher: ['/painel'],
 };

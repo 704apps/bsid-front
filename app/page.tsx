@@ -1,16 +1,17 @@
 'use client'
 
-import CallToAction from "@/components/landpage/calltoAction";
+import CallToAction from "@/components/landpage/callToAction";
 import Carousel from "@/components/landpage/carousel";
+import Content from "@/components/landpage/content";
 import Description from "@/components/landpage/description";
-import Header from "@/components/landpage/header";
 import MainMessage from "@/components/landpage/mainmessage";
 import NavBar from "@/components/landpage/navbar";
+import Particles from "@/components/landpage/particles";
 import SoundWaves from "@/components/landpage/soundWaves";
 import { useEffect, useState } from "react";
 
 const navigation = [
-  { name: "Crie seu BSID em 1 minuto", href: "/" },
+  { name: "Crie seu BSID em 1 minuto", href: "/painel" },
   { name: "Baixar APK", href: "/download" },
   { name: "Planos", href: "/plans" },
   { name: "Login", href: "/login" }
@@ -36,16 +37,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-between w-full min-h-screen overflow-x-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className="flex flex-col items-center justify-between w-full min-h-screen overflow-x-hidden">
+      <Particles className="fixed inset-0 bg-black z-[-1]" quantity={40} staticity={60} ease={50} refresh={true} />
+      
       <NavBar showContent={showContent} navigation={navigation} />
 
-      <Header moveTitle={moveTitle} onLoad={() => setShowContent(true)} />
+      <CallToAction moveTitle={moveTitle} onLoad={() => setShowContent(true)} />
 
       <div className={`flex flex-col items-center w-full transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
         <SoundWaves show={showContent} />
         <MainMessage showContent={showContent} />
         <Description showContent={showContent} />
-        <CallToAction showContent={showContent} />
+        <Content showContent={showContent} />
         <Carousel />
       </div>
     </div>

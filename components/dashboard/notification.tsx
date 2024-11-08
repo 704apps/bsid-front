@@ -6,7 +6,7 @@ const NotificationCard = () => {
   const bannerImageUrl = "https://picsum.photos/500/300"; // URL for banner image
 
   return (
-    <Card className="w-full max-w-md mb-4">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Image

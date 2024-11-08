@@ -21,21 +21,21 @@ export default function SignaturesList() {
   ]
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">Assinaturas</CardTitle>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="h-[400px] pr-4">
+        <ScrollArea className="pr-4">
           {assinaturas.map((item) => (
             <Card key={item.id} className="mb-4 hover:bg-accent transition-colors">
               <a href={item.link} className="block">
                 <CardContent className="p-4">
                   <h3 className="text-lg font-semibold mb-2">{item.titulo}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4">
                     Criado em: {new Date(item.dataCriacao).toLocaleDateString()}
                   </p>
-                  <div className="flex items-center text-sm text-primary">
+                  <div className="flex items-center text-primary">
                     <span>Ver assinatura</span>
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </div>

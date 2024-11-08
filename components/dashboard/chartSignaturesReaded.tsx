@@ -1,9 +1,31 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import { useState, useEffect } from "react"
+import { Bar, BarChart, XAxis, CartesianGrid, LabelList } from "recharts"
 
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
+
+const chartData = [
+  { month: "January", desktop: 186 },
+  { month: "February", desktop: 305 },
+  { month: "March", desktop: 237 },
+  { month: "April", desktop: 73 },
+  { month: "May", desktop: 209 },
+  { month: "June", desktop: 214 },
+]
+
+const chartConfig = {
+  desktop: {
+    label: "Leituras",
+    color: "hsl(var(--chart-1))",
+  },
+} satisfies ChartConfig
 // Função para gerar dados aleatórios para os últimos 6 meses
 const generateLastSixMonthsData = () => {
   const data = []
@@ -39,7 +61,7 @@ export default function ChartSignaturesReaded() {
   const ultimaLeitura = new Date(data[data.length - 1].date).toLocaleDateString('pt-BR')
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full">
       <CardHeader>
         <CardDescription className="text-sm font-medium">Engajamento:</CardDescription>
         <CardTitle className="text-2xl font-bold">{totalLeituras} Leituras</CardTitle>
@@ -48,25 +70,36 @@ export default function ChartSignaturesReaded() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <ResponsiveContainer width="100%" height={200}>
-          <BarChart data={data}>
+        <ChartContainer config={chartConfig}>
+          <BarChart
+            accessibilityLayer
+            data={chartData}
+            margin={{
+              top: 20,
+            }}
+          >
+            <CartesianGrid vertical={true} />
             <XAxis
-              dataKey="name"
-              stroke="#888888"
-              fontSize={12}
+              dataKey="month"
               tickLine={false}
+              tickMargin={10}
               axisLine={false}
+              tickFormatter={(value) => value.slice(0, 3)}
             />
-            <YAxis
-              stroke="#888888"
-              fontSize={12}
-              tickLine={false}
-              axisLine={false}
-              tickFormatter={(value) => `${value}`}
+            <ChartTooltip
+              cursor={false}
+              content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="total" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8}>
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Bar>
           </BarChart>
-        </ResponsiveContainer>
+        </ChartContainer>
       </CardContent>
     </Card>
   )

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef, useEffect, useState } from "react";
 
 const Carousel: React.FC = () => {

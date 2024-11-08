@@ -79,9 +79,9 @@ export default function SignatureReadersTable() {
   )
 
   return (
-    <Card className="w-full max-w-4xl">
+    <Card className="w-full">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Quem leu sua assinatura</CardTitle>
+        <CardTitle className="text-2xl font-bold">Quem leu sua assinatura:</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
