@@ -1,13 +1,13 @@
 'use client'
 
-import CallToAction from "@/components/landpage/callToAction";
-import Carousel from "@/components/landpage/carousel";
-import Content from "@/components/landpage/content";
-import Description from "@/components/landpage/description";
-import MainMessage from "@/components/landpage/mainmessage";
-import NavBar from "@/components/landpage/navbar";
-import Particles from "@/components/landpage/particles";
-import SoundWaves from "@/components/landpage/soundWaves";
+import CallToAction from "@/components/landpage/CallToAction";
+import Carousel from "@/components/landpage/Carousel";
+import Content from "@/components/landpage/Content";
+import Description from "@/components/landpage/Description";
+import MainMessage from "@/components/landpage/MainMessage";
+import NavBar from "@/components/landpage/Navbar";
+import Particles from "@/components/landpage/Particles";
+import SoundWaves from "@/components/landpage/SoundWaves";
 import { useEffect, useState } from "react";
 
 const navigation = [

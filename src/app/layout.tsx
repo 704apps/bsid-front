@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { AuthProvider } from "@/context/authContext";
+import { AuthProvider } from "@/contexts/authContext";
 
 const calSans = localFont({
-  src: "../public/fonts/CalSans-SemiBold.ttf",
+  src: "../../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-calsans",
 });
 

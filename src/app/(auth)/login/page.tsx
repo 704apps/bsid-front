@@ -3,7 +3,7 @@
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { useState } from "react";
-import { useAuth } from "@/context/authContext";
+import { useAuth } from "@/contexts/authContext";
 import { Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
