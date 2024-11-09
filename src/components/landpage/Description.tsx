@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface DescriptionProps {
   showContent: boolean;
 }
@@ -8,8 +10,10 @@ const Description: React.FC<DescriptionProps> = ({ showContent }) => {
       {showContent && (
         <div className={`flex flex-col items-center justify-center w-full max-w-4xl px-4 py-8 transition-opacity duration-1000 md:flex-row md:justify-center fade-in`}>
           <div className="w-full md:w-2/5 md:mr-4 flex justify-center md:justify-end">
-            <img
+            <Image
               src="/images/mock-mobile.png"
+              width={200}
+              height={200}
               alt="Mockup"
               className="object-cover w-full h-auto rounded-lg shadow-lg"
             />
