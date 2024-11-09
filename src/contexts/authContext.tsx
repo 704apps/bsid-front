@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import axios from 'axios';
@@ -5,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface AuthContextProps {
-  user: any;
+  user: any; // [TODO] Adicionar tipagem correta do usuário
   token: string | null;
   email: string;
   password: string;
