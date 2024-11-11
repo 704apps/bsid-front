@@ -9,7 +9,8 @@ export default function PainelLayout({
   return (
     <section>
       <DashboardHeader />
-      <div className="container mx-auto">
+
+      <div className="container mx-auto min-h-[83vh]">
         {children}
       </div>
 

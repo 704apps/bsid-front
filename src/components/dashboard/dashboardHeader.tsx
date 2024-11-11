@@ -65,7 +65,9 @@ export default function DashboardHeader() {
             <Link href="/precos" className="text-muted-foreground hover:text-primary">Preços</Link>
           </nav>
           <div className="hidden md:flex md:items-center md:gap-4">
-            <Button>Nova assinatura</Button>
+            <Link href="/painel/nova-assinatura">
+              <Button>Nova assinatura</Button>
+            </Link>
             <PerfilDropdownMenu />
           </div>
           <div className="md:hidden">
@@ -84,7 +86,9 @@ export default function DashboardHeader() {
             <Link href="/precos" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-primary">Preços</Link>
             <Link href="/" className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-primary">Sair</Link>
             <div className="mt-4 px-3">
-              <Button className="w-full">Nova assinatura</Button>
+              <Link href="/painel/nova-assinatura">
+                <Button className="w-full">Nova assinatura</Button>
+              </Link>
             </div>
           </div>
         </div>
